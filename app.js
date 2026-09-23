@@ -22,12 +22,11 @@
 // AKTIVITAS 1: Setup Berkas & Integrasi JavaScript Eksternal
 // ============================================================
 // Menampilkan judul sistem ke tab Console (F12)
-console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
-
 // TODO 1: Tulis satu baris console.log() untuk memastikan file app.js sudah terhubung!
 // Contoh output: "Skrip app.js berhasil terhubung!"
 
-
+console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
+console.log("Skrip app.js berhasil terhubung!");
 
 
 // ============================================================
@@ -41,6 +40,21 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
 
 
+const NAMA_KEDAI = "Kopi Kapal Ngawi";
+let NAMA_KASIR = "Mas Rusdi";
+let SHIFT_KERJA = "Mas Rusdi = 08.00-16.00";
+alert("Selamat datang di kedai Kopi Kapal Ngawi");
+let NAMA_PELANGGAN = prompt("Siapa nama kamu?", "Tulis nama kamu di sini");
+if (NAMA_PELANGGAN) {
+    alert("Hai , " + NAMA_PELANGGAN + " Selamat datang!!");
+}
+
+else {
+    alert("Anda tidak memasukan nama");
+}
+console.log("Nama kedai : " + NAMA_KEDAI);
+console.log("Nama kasir : " + NAMA_KASIR);
+console.log("Shift kerja : " + SHIFT_KERJA);
 
 
 // ---- DEMO PERBEDAAN LET vs CONST ----
@@ -48,7 +62,8 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // Ubah (re-assign) nilai variabel "namaKasir" dengan nama kasir lain,
 // lalu cetak ke Console untuk membuktikan bahwa variabel "let" nilainya dapat diubah.
 
-
+NAMA_KASIR = "Mas Reza";
+console.log(NAMA_KASIR);
 
 
 // ---- BAGIAN 2B: INPUT INTERAKTIF & PENGANDAIAN DASAR ----
@@ -60,6 +75,18 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
 
 
+alert("Terima kasih sudah berkunjung ke kedai Kopi Kapal Ngawi");
+NAMA_PELANGGAN = prompt("Masukin nama kamu kalau udh member ngawi");
+if (NAMA_PELANGGAN) {
+    alert("Terima kasih " + NAMA_PELANGGAN + " sudah jadi member ngawi");
+    console.log("Hai " + NAMA_PELANGGAN );
+}
+
+else{
+alert("Kamu lupa masukin nama kamu. kami panggil Pelanggan Setia");
+NAMA_PELANGGAN = "Pelanggan Setia";
+console.log("Pelanggan Setia " + NAMA_PELANGGAN);
+}
 
 
 // ============================================================
@@ -74,6 +101,16 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
 
 
+let POIN_KOPI = 20;
+let POIN_MAKANAN = 30;
+let POIN_MERCHANDISE = 40;
+
+let TOTAL_POIN = POIN_KOPI + POIN_MAKANAN + POIN_MERCHANDISE;
+
+console.log("=== Total Nilai " + NAMA_PELANGGAN + " ===")
+console.log("POIN kopi " + POIN_KOPI);
+console.log("POIN makanan " + POIN_MAKANAN);
+console.log("Poin merchandise " + POIN_MERCHANDISE);
 
 
 // ============================================================
@@ -91,7 +128,28 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
 
 
+let TIER_MEMBER = "";
+let BENEFIT = "";
 
+if (TOTAL_POIN >= 100) {
+    TIER_MEMBER = "Platinum";
+    BENEFIT = "Diskon 20% + Geratis 1 Minuman Signature";
+}
+else if (TOTAL_POIN >= 70) {
+    TIER_MEMBER = "Gold";
+    BENEFIT = "Diskon 10% di setiap transaksi";
+}
+else if (TOTAL_POIN >= 40) {
+    TIER_MEMBER = "Silver";
+    BENEFIT = "Diskon 5% untuk menu minuman";
+}
+else {
+    TIER_MEMBER = "Bronze";
+    BENEFIT = "Member baru belum ada benefit";
+}
+
+console.log("Kamu sekarang tier : " + TIER_MEMBER + " Keuntungan : " +BENEFIT);
+alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ", tier kamu : " + TIER_MEMBER + ", kamu punya benefit : " + BENEFIT);
 
 // ============================================================
 // AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
