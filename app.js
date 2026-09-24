@@ -113,3 +113,109 @@ console.log("POIN makanan " + POIN_MAKANAN);
 console.log("Poin merchandise " + POIN_MERCHANDISE);
 
 
+// ============================================================
+// AKTIVITAS 4: Percabangan if-else — Penentuan Tier Membership
+// ============================================================
+
+// TODO 4:
+// 1. Buat variabel "tierMember" dan "benefit" bertipe string kosong ("").
+// 2. Gunakan percabangan "if - else if - else" berdasarkan nilai "totalPoin":
+//    - totalPoin >= 100 : tierMember = "Platinum", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
+//    - totalPoin >= 70  : tierMember = "Gold", benefit = "Diskon 10% di setiap transaksi"
+//    - totalPoin >= 40  : tierMember = "Silver", benefit = "Diskon 5% untuk menu minuman"
+//    - selain itu       : tierMember = "Bronze", benefit = "Member Reguler (kumpulkan poin untuk naik tier)"
+// 3. Cetak hasil tierMember dan benefit ke Console.
+// 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
+
+
+let TIER_MEMBER = "";
+let BENEFIT = "";
+
+if (TOTAL_POIN >= 100) {
+    TIER_MEMBER = "Platinum";
+    BENEFIT = "Diskon 20% + Geratis 1 Minuman Signature";
+}
+else if (TOTAL_POIN >= 70) {
+    TIER_MEMBER = "Gold";
+    BENEFIT = "Diskon 10% di setiap transaksi";
+}
+else if (TOTAL_POIN >= 40) {
+    TIER_MEMBER = "Silver";
+    BENEFIT = "Diskon 5% untuk menu minuman";
+}
+else {
+    TIER_MEMBER = "Bronze";
+    BENEFIT = "Member baru belum ada benefit";
+}
+
+console.log("Kamu sekarang tier : " + TIER_MEMBER + " Keuntungan : " +BENEFIT);
+alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ", tier kamu : " + TIER_MEMBER + ", kamu punya benefit : " + BENEFIT);
+
+// ============================================================
+// AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
+// ============================================================
+
+// TODO 5A:
+// Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
+// menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
+
+
+function HITUNG_TOTAL_POIN(p1, p2, p3) {
+    let JUMLAH = p1 + p2 + p3;
+    return JUMLAH 
+}
+
+
+// TODO 5B:
+// Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
+// dan mengembalikan (return) string nama tier beserta keterangannya.
+
+
+function TENTUKAN_TIER(TIER_MEMBER) {
+    if (TIER_MEMBER >= 100) return "Platinum - Pelanggan terhormat";
+    if (TIER_MEMBER >= 70) return "Gold - Pelanggan prioritas";
+    if (TIER_MEMBER >= 40) return "Silver - Pelanggan setia"
+    return "Bronze - Pelanggan pemula";
+}
+
+
+// TODO 5C:
+// Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
+// 1. Hitung total poin dan tentukan tier untuk simulasi Pelanggan B (misal poin: 35, 25, 20).
+// 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
+// 3. Cetak data Pelanggan B dan C ke tab Console.
+
+
+let POIN_PELANGGAN_A = HITUNG_TOTAL_POIN(30, 40, 30);
+
+let TIER_MEMBER_PELANGGAN_A = TENTUKAN_TIER(POIN_PELANGGAN_A);
+
+console.log("=== TIER MEMBER PELANGGAN A");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_A);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_A);
+
+let POIN_PELANGGAN_B = HITUNG_TOTAL_POIN(20, 20, 30);
+
+let TIER_MEMBER_PELANGGAN_B = TENTUKAN_TIER(POIN_PELANGGAN_B);
+
+console.log("=== TIER MEMBER PELANGGAN B");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_B);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_B);
+
+let POIN_PELANGGAN_C = HITUNG_TOTAL_POIN(10, 20, 30);
+
+let TIER_MEMBER_PELANGGAN_C = TENTUKAN_TIER(POIN_PELANGGAN_C);
+
+console.log("=== TIER MEMBER PELANGGAN C");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_C);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_C);
+
+
+let POIN_PELANGGAN_D = HITUNG_TOTAL_POIN(0, 0, 0);
+
+let TIER_MEMBER_PELANGGAN_D = TENTUKAN_TIER(POIN_PELANGGAN_D);
+
+console.log("=== TIER MEMBER PELANGGAN D");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_D);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_D);
+
