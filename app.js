@@ -101,9 +101,9 @@ console.log("Pelanggan Setia " + NAMA_PELANGGAN);
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
 
 
-let POIN_KOPI = 20;
-let POIN_MAKANAN = 30;
-let POIN_MERCHANDISE = 40;
+let POIN_KOPI = 40;
+let POIN_MAKANAN = 40;
+let POIN_MERCHANDISE = 20;
 
 let TOTAL_POIN = POIN_KOPI + POIN_MAKANAN + POIN_MERCHANDISE;
 
@@ -160,6 +160,10 @@ alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ",
 // menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
 
 
+function HITUNG_TOTAL_POIN(p1, p2, p3) {
+    let JUMLAH = p1 + p2 + p3;
+    return JUMLAH 
+}
 
 
 // TODO 5B:
@@ -167,6 +171,12 @@ alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ",
 // dan mengembalikan (return) string nama tier beserta keterangannya.
 
 
+function TENTUKAN_TIER(TIER_MEMBER) {
+    if (TIER_MEMBER >= 100) return "Platinum - Pelanggan terhormat";
+    if (TIER_MEMBER >= 70) return "Gold - Pelanggan prioritas";
+    if (TIER_MEMBER >= 40) return "Silver - Pelanggan setia"
+    return "Bronze - Pelanggan pemula";
+}
 
 
 // TODO 5C:
@@ -176,6 +186,38 @@ alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ",
 // 3. Cetak data Pelanggan B dan C ke tab Console.
 
 
+let POIN_PELANGGAN_A = HITUNG_TOTAL_POIN(30, 40, 30);
+
+let TIER_MEMBER_PELANGGAN_A = TENTUKAN_TIER(POIN_PELANGGAN_A);
+
+console.log("=== TIER MEMBER PELANGGAN A");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_A);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_A);
+
+let POIN_PELANGGAN_B = HITUNG_TOTAL_POIN(20, 20, 30);
+
+let TIER_MEMBER_PELANGGAN_B = TENTUKAN_TIER(POIN_PELANGGAN_B);
+
+console.log("=== TIER MEMBER PELANGGAN B");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_B);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_B);
+
+let POIN_PELANGGAN_C = HITUNG_TOTAL_POIN(10, 20, 30);
+
+let TIER_MEMBER_PELANGGAN_C = TENTUKAN_TIER(POIN_PELANGGAN_C);
+
+console.log("=== TIER MEMBER PELANGGAN C");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_C);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_C);
+
+
+let POIN_PELANGGAN_D = HITUNG_TOTAL_POIN(0, 0, 0);
+
+let TIER_MEMBER_PELANGGAN_D = TENTUKAN_TIER(POIN_PELANGGAN_D);
+
+console.log("=== TIER MEMBER PELANGGAN D");
+console.log("Total poin kamu adalah " + POIN_PELANGGAN_D);
+console.log(" Tier kamu adalah " + TIER_MEMBER_PELANGGAN_D);
 
 
 // ============================================================
@@ -186,6 +228,13 @@ alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ",
 // Buat variabel Array bernama "menuRekomendasi" yang berisi minimal 5 nama menu kopi/makanan.
 
 
+let MENU_REKOMENDASI = [
+    "Alpukat Kocok",
+    "Kopi kapal ngawi",
+    "Kebab farhan",
+    "Sungut lele goreng",
+    "Sate ayam tusuk gilang"
+];
 
 
 // TODO 6B:
@@ -193,9 +242,16 @@ alert("Terima kasih " + NAMA_PELANGGAN + " kamu punya poin : " + TOTAL_POIN + ",
 // "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
 
 
+console.log("=== Menu rekomendasi " + "===")
+
+for (let i = 0; i < MENU_REKOMENDASI.length; i++) {
+    console.log((i + 1) + ". " + MENU_REKOMENDASI[i]);
+}
 
 
 // TODO 6C:
 // Cetak jumlah total menu di akhir daftar menggunakan properti ".length".
 // Akhiri program dengan: console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
 
+console.log("Total menu rekomendasi : " + MENU_REKOMENDASI);
+console.log("=== TUGAS MANDIRI SELESAI DENGAN SUKSES! ===");
